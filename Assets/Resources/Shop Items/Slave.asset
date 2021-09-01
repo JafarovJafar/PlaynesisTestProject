@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fe45e19e45ff64189633d88b874ea4, type: 3}
   m_Name: Slave
   m_EditorClassIdentifier: 
-  _coinsCost: 5
-  _dollarsCost: 300
+  _name: "\u0440\u0430\u0431"
+  _description: gm slave
+  _prices:
+  - _currency: {fileID: 11400000, guid: 204878ece5786fb438e5544ae3d7b128, type: 2}
+    _amount: 300
+  - _currency: {fileID: 11400000, guid: 80668c498db914a4aa57edc3f0149d1a, type: 2}
+    _amount: 5

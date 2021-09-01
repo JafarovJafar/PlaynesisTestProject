@@ -1,9 +1,13 @@
-﻿namespace Game.Shop
+﻿using System;
+using UnityEngine;
+
+namespace Game.Shop
 {
+    [Serializable]
     public struct Price
     {
-        private Currency _currency;
-        private float _amount;
+        [SerializeField] private Currency _currency;
+        [SerializeField] private float _amount;
 
         public Currency Currency => _currency;
         public float Amount => _amount;
