@@ -7,6 +7,15 @@ namespace Game.Shop
     /// </summary>
     public class Shop : MonoBehaviour
     {
+        // по сути это Entry Point магазина
 
+        [SerializeField] private ShopItemsSpawner _spawner;
+
+        private void Start()
+        {
+            //_spawner.Init(null);
+
+
+        }
     }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9fe45e19e45ff64189633d88b874ea4, type: 3}
-  m_Name: Lamborghini
+  m_Name: Dungeon Master
   m_EditorClassIdentifier: 
-  _name: Lamborghini
-  _description: best car of the universe
+  _name: dungeon master
+  _description: gm
   _prices:
   - _currency: {fileID: 11400000, guid: 204878ece5786fb438e5544ae3d7b128, type: 2}
-    _amount: 100000
-  _sprite: {fileID: 21300000, guid: e3e9a21165f79db4ab0c93586e55da4d, type: 3}
+    _amount: 1
+  _sprite: {fileID: 21300000, guid: ec3aedbc1f3ef814fb681af48eb5cc0c, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.Shop
 {
     [Serializable]
-    public struct Price
+    public class Price
     {
         [SerializeField] private Currency _currency;
         [SerializeField] private float _amount;

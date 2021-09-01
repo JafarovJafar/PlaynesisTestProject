@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Game.Shop
 {
     [CreateAssetMenu(fileName = "Currency", menuName = "Custom Assets/Currency")]
+    [Serializable]
     public class Currency : ScriptableObject
     {
         [SerializeField] protected Sprite _sprite;
