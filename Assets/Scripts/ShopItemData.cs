@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Game.Shop
 {
     [CreateAssetMenu(fileName = "NewShopItem", menuName = "Custom Assets/ShopItemData")]
+    [Serializable]
     public class ShopItemData : ScriptableObject // наверное стоит назвать по другому, потому что будет использоваться не только в магазине. соответственно неймспейс другой
     {
         #region Properties
@@ -19,7 +20,6 @@ namespace Game.Shop
 
         [SerializeField] private string _name;
         [SerializeField] private string _description;
-
         [SerializeField] private Price[] _prices;
         [SerializeField] private Sprite _sprite;
 
@@ -27,5 +27,10 @@ namespace Game.Shop
 
         [SerializeField] private DateTime _startTime;
         [SerializeField] private float _duration;
+
+        public void SetStartTime(DateTime dateTime)
+        {
+            _startTime = dateTime;
+        }
     }
 }

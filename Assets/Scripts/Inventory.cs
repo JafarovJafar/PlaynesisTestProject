@@ -5,12 +5,16 @@ namespace Game.Common
 {
     public class Inventory : MonoBehaviour
     {
-        public ShopItemData[] _items;
+        [SerializeField] public ShopItemData[] _items;
         public ShopItemData[] Items => _items;
 
         public void Init()
         {
             // загрузка из сейва
+
+            string some = JsonUtility.ToJson(_items);
+
+            Debug.Log(some);
         }
 
         public void Add(ShopItemData item)

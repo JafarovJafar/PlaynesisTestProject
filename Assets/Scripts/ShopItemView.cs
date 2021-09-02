@@ -37,7 +37,6 @@ namespace Game.Shop
             else
             {
                 _timer.Init(_shopItem.EndTime);
-                //_timerText.text = TimeFormatter.DateToText(_shopItem.StartTime + TimeSpan.FromMinutes(_shopItem.Duration));
             }
 
             if (_shopItem.IsBought)
