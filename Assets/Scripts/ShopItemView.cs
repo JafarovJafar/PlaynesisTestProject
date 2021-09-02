@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Game.Common;
 
 namespace Game.Shop
 {
@@ -11,7 +12,7 @@ namespace Game.Shop
         [SerializeField] private Image _image;
         [SerializeField] private Text _headerText;
         [SerializeField] private Text _descriptionText;
-        [SerializeField] private Text _timerText;
+        [SerializeField] private TimerView _timer;
 
         [SerializeField] private Button _selectButton;
 
@@ -29,9 +30,17 @@ namespace Game.Shop
             _headerText.text = _shopItem.Name;
             _descriptionText.text = _shopItem.Description;
 
-            //_timerText.text = TimerFormatter.DateToTime(_shopItem.);
+            if (_shopItem.Duration <= 0)
+            {
+                _timer.gameObject.SetActive(false);
+            }
+            else
+            {
+                _timer.Init(_shopItem.EndTime);
+                //_timerText.text = TimeFormatter.DateToText(_shopItem.StartTime + TimeSpan.FromMinutes(_shopItem.Duration));
+            }
 
-            if (_shopItem.IsAvailable)
+            if (_shopItem.IsBought)
             {
                 _selectButton.onClick.AddListener(() => SelectClicked?.Invoke());
             }

@@ -11,5 +11,11 @@ namespace Game.Common
         {
             return dateTime.ToString("T");
         }
+
+        public static string DateToText(TimeSpan timeSpan)
+        {
+            //return timeSpan.ToString("hh:mm:ss");
+            return timeSpan.ToString(@"hh\:mm\:ss");
+        }
     }
 }

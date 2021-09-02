@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6743216694831134656}
   - component: {fileID: 5082843922579957743}
   - component: {fileID: 7958951940289069094}
+  - component: {fileID: 2152462630835548141}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: 10:44"
+--- !u!114 &2152462630835548141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161813774445057044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc79e52367e67b1458dcb4a0b45f99e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 7958951940289069094}
 --- !u!1 &6458935776243102911
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +281,7 @@ MonoBehaviour:
   _image: {fileID: 8896262902867804469}
   _headerText: {fileID: 8896262903588515547}
   _descriptionText: {fileID: 8896262903727294434}
-  _timerText: {fileID: 7958951940289069094}
+  _timer: {fileID: 2152462630835548141}
   _selectButton: {fileID: 6803496310872880077}
   _priceButtonPrefab: {fileID: -4897474902917628541, guid: 165cb183675b422458e3efdd7da2f80c,
     type: 3}

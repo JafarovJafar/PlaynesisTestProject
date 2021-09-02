@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Game.Common;
 
 namespace Game.Shop
@@ -22,7 +21,7 @@ namespace Game.Shop
 
         private void Update()
         {
-            Debug.Log(TimeFormatter.DateToText(DateTime.Now));
+            //Debug.Log(TimeFormatter.DateToText(DateTime.Now));
         }
     }
 }
