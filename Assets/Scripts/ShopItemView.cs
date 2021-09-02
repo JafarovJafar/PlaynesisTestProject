@@ -13,11 +13,13 @@ namespace Game.Shop
         [SerializeField] private Text _descriptionText;
         [SerializeField] private Text _timerText;
 
-        [SerializeField] private PriceButton _priceButtonPrefab;
+        [SerializeField] private Button _selectButton;
 
+        [SerializeField] private PriceButton _priceButtonPrefab;
         [SerializeField] private Transform _priceButtonsContainer;
 
-        private UnityAction<Price> BuyClicked;
+        public UnityAction<Price> BuyClicked;
+        public UnityAction SelectClicked;
 
         public void Init(ShopItemData shopItem)
         {
@@ -27,12 +29,24 @@ namespace Game.Shop
             _headerText.text = _shopItem.Name;
             _descriptionText.text = _shopItem.Description;
 
-            // ТАЙМЕР ЕСЛИ НУЖНО
+            //_timerText.text = TimerFormatter.DateToTime(_shopItem.);
 
-            foreach (Price price in _shopItem.Prices)
+            if (_shopItem.IsAvailable)
+            {
+                _selectButton.onClick.AddListener(() => SelectClicked?.Invoke());
+            }
+            else
+            {
+                _selectButton.interactable = false;
+            }
+
+            Price[] prices = _shopItem.Prices;
+
+            for (int i = 0; i < _shopItem.Prices.Length; i++)
             {
                 PriceButton priceButton = Instantiate(_priceButtonPrefab, _priceButtonsContainer);
-                priceButton.Init(price, BuyClicked);
+                priceButton.Init(prices[i], BuyClicked);
+                priceButton.name = $"PriceButton_{prices[i].Currency.Name}";
             }
         }
     }

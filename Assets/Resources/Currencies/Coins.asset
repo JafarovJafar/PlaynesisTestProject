@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4756ccf583141446876e181e4551908, type: 3}
   m_Name: Coins
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 826ee471f62d997489f036ae6a936df5, type: 3}
   _name: "\u043C\u043E\u043D\u0435\u0442\u044B"
