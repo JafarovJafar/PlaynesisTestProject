@@ -9,13 +9,17 @@ namespace Game.Shop
     /// </summary>
     public class Wallet : MonoBehaviour
     {
-        private Dictionary<Currency, float> currencies;
+        private Dictionary<Currency, float> currencies = new Dictionary<Currency, float>();
 
         public UnityAction Updated;
 
+        [SerializeField] private Currency currency;
+
         public void Init()
         {
-            // получаем данные из сейва
+            // получаем данные из сейва фейково
+
+            currencies.Add(currency, 1000);
         }
 
         public void Add(Currency currency, float amount)
@@ -32,7 +36,7 @@ namespace Game.Shop
             Updated?.Invoke();
         }
 
-        public float Get(Currency currency, float amount)
+        public void Remove(Currency currency, float amount, UnityAction<bool> Success)
         {
             if (currencies.ContainsKey(currency))
             {
@@ -46,7 +50,7 @@ namespace Game.Shop
 
                     Updated?.Invoke();
 
-                    return amount;
+                    Success?.Invoke(true);
                 }
             }
             else
@@ -54,7 +58,7 @@ namespace Game.Shop
                 Debug.LogError("ТАКОЙ ВАЛЮТЫ НЕТ В КОШЕЛЬКЕ!!!");
             }
 
-            return 0;
+            Success?.Invoke(false);
         }
     }
 }

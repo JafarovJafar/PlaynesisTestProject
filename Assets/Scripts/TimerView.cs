@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game.Common
@@ -8,6 +9,9 @@ namespace Game.Common
     {
         [SerializeField] private Text _text;
         [SerializeField] private DateTime _endTime;
+        private TimeSpan RemainingTime => _endTime - DateTime.Now;
+
+        public UnityAction Finished;
 
         public void Init(DateTime endTime)
         {
@@ -16,6 +20,14 @@ namespace Game.Common
 
         private void Update()
         {
+            if (RemainingTime.Ticks <= 0)
+            {
+                Finished?.Invoke();
+                _text.text = TimeFormatter.DateToText(TimeSpan.Zero);
+
+                return;
+            }
+
             _text.text = TimeFormatter.DateToText(_endTime - DateTime.Now);
         }
     }

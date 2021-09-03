@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Shop
 {
@@ -28,9 +29,21 @@ namespace Game.Shop
         [SerializeField] private DateTime _startTime;
         [SerializeField] private float _duration;
 
+        public UnityAction Updated;
+
         public void SetStartTime(DateTime dateTime)
         {
             _startTime = dateTime;
+
+            Updated?.Invoke();
+        }
+
+        public void SetBought(bool value)
+        {
+            _startTime = DateTime.Now;
+            _isBought = value;
+
+            Updated?.Invoke();
         }
     }
 }

@@ -18,3 +18,5 @@ MonoBehaviour:
   - _currency: {fileID: 11400000, guid: 204878ece5786fb438e5544ae3d7b128, type: 2}
     _amount: 1
   _sprite: {fileID: 21300000, guid: ec3aedbc1f3ef814fb681af48eb5cc0c, type: 3}
+  _isBought: 0
+  _duration: 0

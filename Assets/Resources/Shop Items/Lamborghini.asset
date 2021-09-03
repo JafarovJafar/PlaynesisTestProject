@@ -19,4 +19,4 @@ MonoBehaviour:
     _amount: 100000
   _sprite: {fileID: 21300000, guid: e3e9a21165f79db4ab0c93586e55da4d, type: 3}
   _isBought: 0
-  _duration: 1
+  _duration: 0.1

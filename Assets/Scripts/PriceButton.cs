@@ -11,12 +11,19 @@ namespace Game.Shop
         [SerializeField] private Image _icon;
         [SerializeField] private Text _amountText;
 
-        public void Init(Price price, UnityAction<Price> Clicked)
-        {
-            _icon.sprite = price.Currency.Sprite;
-            _amountText.text = price.Amount.ToString();
+        public Price Price => _price;
+        private Price _price;
+        
+        public UnityAction<Price> Clicked;
 
-            _button.onClick.AddListener(() => Clicked?.Invoke(price));
+        public void Init(Price price)
+        {
+            _price = price;
+
+            _icon.sprite = _price.Currency.Sprite;
+            _amountText.text = _price.Amount.ToString();
+
+            _button.onClick.AddListener(() => Clicked?.Invoke(_price));
         }
     }
 }

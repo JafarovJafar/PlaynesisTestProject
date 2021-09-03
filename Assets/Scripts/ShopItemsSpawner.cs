@@ -17,15 +17,21 @@ namespace Game.Shop
         {
             _items = items;
 
-
-
             for (int i = 0; i < _items.Length; i++)
             {
+                ShopItemData item = _items[i];
+
                 ShopItemView view = Instantiate(_shopItemPrefab, _rootTransform);
-                view.name = $"ShopItem_{_items[i].Name}";
-                view.Init(_items[i]);
-                view.SelectClicked += () => ItemSelectClicked?.Invoke(_items[i]);
-                view.BuyClicked += (price) => ItemBuyClicked?.Invoke(_items[i], price);
+                view.name = $"ShopItem_{item.Name}";
+                view.Init(item);
+                view.SelectClicked += () => ItemSelectClicked?.Invoke(item);
+                view.BuyClicked += (price) => ItemBuyClicked?.Invoke(item, price);
+                view.Finished += () => item.SetBought(false);
+
+                item.Updated += () =>
+                {
+                    view.Refresh();
+                };
             }
         }
     }
